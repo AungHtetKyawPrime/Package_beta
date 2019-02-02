@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#E757F7"
+            android:text="Honeymoon Packages"
+            android:textStyle="bold"
+            android:id="@+id/package_name"
+            android:layout_marginLeft="5dp"
+            android:textSize="25dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/package_name"
+            android:text="To get to know package detail."
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#000"
+            android:id="@+id/to_get_desc"
+            android:textSize="18dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/to_get_desc"
+            android:id="@+id/price_and_book"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="6dp"
+            android:orientation="horizontal">
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:cardBackgroundColor="#E757F7"
+                android:elevation="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/place_price"
+                    android:text="460,000mmk "
+                    android:layout_margin="5dp"
+                    android:textColor="#fff"
+                    />
+
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book Now"
+                android:id="@+id/book_now"
+                android:textColor="#E242F3"
+                android:textSize="18dp"
+                android:layout_marginLeft="150dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Dos And Do'ts"
+            android:layout_below="@id/price_and_book"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/doandnot"
+            android:textColor="#000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doandnot"
+            android:text="We need to focus on this :"
+            android:textColor="#333"
+            android:id="@+id/focus_text"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/first_desc"
+            android:layout_below="@+id/focus_text"
+            android:text="1 Bettig structure can vary .Hello AutoBots ,I am Optimus
+            Prime .I am from unicron ,our world had wars and bumblebe ! You can EHll"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/second_desc"
+            android:layout_below="@+id/first_desc"
+            android:text="2 Bettig structure can vary .Hello AutoBots ,I am Optimus
+            Prime .I am from unicron ,our world had wars and bumblebe ! You can EHll"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/third_desc"
+            android:layout_below="@+id/second_desc"
+            android:text="3 Bettig structure can vary .Hello AutoBots ,I am Optimus
+            Prime .I am from unicron ,our world had wars and bumblebe ! You can EHll"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="5dp"
+            android:id="@+id/break1"
+            android:layout_below="@+id/third_desc"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/gradient_tab"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Cancellation Policy"
+            android:layout_below="@id/break1"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/cancel_policy"
+            android:textColor="#000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cancel_policy"
+            android:text="Please Remember this before buy this package:"
+            android:textColor="#333"
+            android:id="@+id/cancel_text"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/cancel_desc"
+            android:layout_below="@+id/cancel_text"
+            android:text="1 Bettig structure can vary .Hello AutoBots ,I am Optimus
+            Prime .I am from unicron ,our world had wars and bumblebe ! You can EHll"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/cancel_desc1"
+            android:layout_below="@+id/cancel_desc"
+            android:text="2 Bettig structure can vary .Hello AutoBots ,I am Optimus
+            Prime .I am from unicron ,our world had wars and bumblebe ! You can EHll"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/cancel_desc2"
+            android:layout_below="@+id/cancel_desc1"
+            android:text="3 Bettig structure can vary .Hello AutoBots ,I am Optimus
+            Prime .I am from unicron ,our world had wars and bumblebe ! You can EHll"/>
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/purchase_text"
+            android:layout_below="@+id/cancel_desc2"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="Purchase now when we have special promotion
+period in this month "/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/purchase_text"
+            android:background="@drawable/rounded_corner1"
+            android:text="Book Now"
+            android:textColor="#fff"
+            android:id="@+id/book_now_button"
+            android:layout_margin="10dp"/>
+
+    </RelativeLayout>
+</ScrollView>
