@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#333</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhite">#fff</color>
+    <color name="tv_black">#000</color>
 
 </resources>

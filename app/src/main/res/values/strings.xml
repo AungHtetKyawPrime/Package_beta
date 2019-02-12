@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Package_beta</string>
-    <string name="title_activity_main_fragment">MainFragment</string>
+    <string name="title_activity_main_fragment">Package</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="mapbox_token">pk.eyJ1IjoiemF5cGh5bzEiLCJhIjoiY2pyaXF1Yjg4MDJuOTN5bGtyamNtNW4waCJ9.70u6hvfw704DE8TVoLpTWw</string>
 </resources>

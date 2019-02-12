@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.package_beta.Fragment.package_group;
 import com.example.package_beta.Fragment.package_home;
 import com.example.package_beta.Fragment.package_trips;
 
@@ -32,7 +33,7 @@ public class MainFragment extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_notifications:
-                    fragment=new package_home();
+                    fragment=new package_group();
                     loadFragment(fragment);
                     return true;
             }

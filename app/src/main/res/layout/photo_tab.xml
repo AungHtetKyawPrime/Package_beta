@@ -113,14 +113,14 @@
             android:src="@drawable/bagan6"
             />
         <TextView
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/purchase_text"
-            android:layout_below="@+id/second_group_big"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
-            android:text="Purchase now when we have special promotion
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/purchase_text"
+        android:layout_below="@+id/second_group_big"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="Purchase now when we have special promotion
 period in this month "/>
         <Button
             android:layout_width="match_parent"

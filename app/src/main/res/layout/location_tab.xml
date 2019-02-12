@@ -1,11 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Tab 2"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff">
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textColor="#E757F7"
+       android:text="Honeymoon Packages"
+       android:textStyle="bold"
+       android:id="@+id/package_name"
+       android:layout_marginLeft="5dp"
+       android:textSize="25dp"/>
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/package_name"
+       android:text="To get to know package detail."
+       android:layout_marginTop="4dp"
+       android:layout_marginLeft="5dp"
+       android:textColor="#000"
+       android:id="@+id/to_get_desc"
+       android:textSize="18dp"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/to_get_desc"
+       android:id="@+id/price_and_book"
+       android:layout_marginTop="8dp"
+       android:layout_marginLeft="6dp"
+       android:orientation="horizontal">
+      <android.support.v7.widget.CardView
+          android:layout_width="100dp"
+          android:layout_height="30dp"
+          app:cardBackgroundColor="#E757F7"
+          android:elevation="5dp">
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/place_price"
+             android:text="460,000mmk "
+             android:layout_margin="5dp"
+             android:textColor="#fff"
+             />
+
+      </android.support.v7.widget.CardView>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Book Now"
+          android:id="@+id/book_now"
+          android:textColor="#E242F3"
+          android:textSize="18dp"
+          android:layout_marginLeft="150dp"
+          />
+   </LinearLayout>
+   <com.mapbox.mapboxsdk.maps.MapView
+       android:layout_width="match_parent"
+       android:layout_height="230dp"
+       android:id="@+id/map_view"
+       android:layout_below="@id/price_and_book"
+       android:layout_marginTop="10dp"
+       ></com.mapbox.mapboxsdk.maps.MapView>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:id="@+id/location_text"
+       android:layout_below="@+id/map_view"
+       android:weightSum="4"
+       android:layout_marginTop="20dp"
+       android:layout_height="wrap_content">
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_weight="2"
+          android:layout_height="wrap_content"
+          android:text="Ananda Pagoda"
+          android:textSize="15sp"
+          android:textColor="@color/tv_black"
+          android:layout_marginLeft="@dimen/pk_location_left"
+          android:textStyle="bold"
+          />
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:text="Get Direction"
+          android:textColor="@color/tv_black"
+          />
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:text="Save"
+          android:layout_marginLeft="12dp"
+          android:textColor="@color/tv_black"
+          />
+
+   </LinearLayout>
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="0.6dp"
+       android:layout_marginTop="20dp"
+       android:id="@+id/view_bar"
+       android:layout_below="@+id/location_text"
+       android:background="#ACA9A9"/>
+   <TextView
+       android:layout_width="280dp"
+       android:layout_height="wrap_content"
+       android:id="@+id/purchase_text"
+       android:layout_below="@+id/view_bar"
+       android:gravity="center"
+       android:layout_marginTop="10dp"
+       android:layout_centerHorizontal="true"
+       android:text="Purchase now when we have special promotion
+period in this month "/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/purchase_text"
+       android:background="@drawable/rounded_corner1"
+       android:text="Book Now"
+       android:id="@+id/book_now_button"
+       android:textColor="#fff"
+       android:layout_margin="10dp"
+
+       />
 </RelativeLayout>

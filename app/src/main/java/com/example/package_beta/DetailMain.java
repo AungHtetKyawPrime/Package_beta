@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.package_beta.Adapter.DetailTabAdapter;
+import com.example.package_beta.DetailTab.Location;
 
 public class DetailMain extends AppCompatActivity {
     public static String place_name,place_price;
@@ -61,4 +62,5 @@ public class DetailMain extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
 }
