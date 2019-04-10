@@ -41,10 +41,10 @@ public class PkMapHelper {
     private MapView mapView;
     private Location originLocation;
 
-    public PkMapHelper(Context context, MapView mapView)
+    public PkMapHelper(Context context, Activity activity, MapView mapView)
     {
         this.context = context;
-        //this. activity = activity;
+        this. activity = activity;
         this. mapView = mapView;
     }
 
@@ -53,7 +53,8 @@ public class PkMapHelper {
     public MapboxMap getMapboxMap1() {return mapboxMap1;}
 
     @SuppressWarnings("MissingPermission")
-    public LocationComponent setUpLocationComponent(LocationComponent locationComponent1, Style style, boolean myPosition)
+    public LocationComponent setUpLocationComponent
+            (LocationComponent locationComponent1, Style style, boolean myPosition)
     {
         locationComponent1.activateLocationComponent(context, style);
         locationComponent1.setLocationComponentEnabled(true);
@@ -88,7 +89,7 @@ public class PkMapHelper {
                 .setOrigin(origin)
                 .setDestination(destination)
                 .setProfile(DirectionsCriteria.PROFILE_DRIVING)
-                .setAccessToken(context.getResources().getString(R.string.mapbox_token))
+                .setAccessToken(context.getResources().getString(R.string.access_token))
                 .build();
 
         mapboxDirections.enqueue(new Callback<DirectionsResponse>() {
@@ -120,14 +121,14 @@ public class PkMapHelper {
     }
 
 
-    public void markerSetUp(MapboxMap m,LatLng latLng)
+    public void markerSetUp(MapboxMap m, LatLng latLng, String place_name)
     {
         MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.title("Bago").setPosition(latLng);
+        markerOptions.title(place_name).setPosition(latLng);
         m.addMarker(markerOptions);
     }
 
-    public LocationComponent setUpLocatinComponentDetail (Style style,LocationComponent locationComponentperm,boolean myposition)
+    public LocationComponent setUpLocatinComponentDetail (Style style, LocationComponent locationComponentperm, boolean myposition)
     {
         LocationComponent locationComponent1 = setUpLocationComponent(locationComponentperm,style,myposition);
         return locationComponent1;

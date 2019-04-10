@@ -1,25 +1,12 @@
-package com.example.package_beta.DetailTab;
-
+package com.example.package_beta;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.package_beta.DetailMain;
-import com.example.package_beta.Full_Direction;
-import com.example.package_beta.R;
-import com.example.package_beta.Register.SignIn;
+import com.example.package_beta.DetailTab.PkMapHelper;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
@@ -32,80 +19,24 @@ import com.mapbox.mapboxsdk.maps.Style;
 
 import java.util.List;
 
-public class Location extends Fragment {
+public class Full_Direction extends AppCompatActivity {
     MapView mapView;
     public MapboxMap mapboxMap1;
     PermissionsManager permissionsManager;
     LocationComponent locationComponent;
     PkMapHelper pkMapHelper;
-    TextView book_now,package_name,package_price;
-    Button book_now_button;
-    TextView direction;
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Mapbox.getInstance(getContext(),getResources().getString(R.string.access_token));
-
-
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        //super.onSaveInstanceState(outState);
-       mapView.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.location_tab, container,
-                false);
-
-        return v;
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        mapView = (MapView) view.findViewById(R.id.map_view);
-
+        Mapbox.getInstance(getApplicationContext(),getResources().getString(R.string.access_token));
+        setContentView(R.layout.activity_full__direction);
+        mapView = findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
-        book_now=(TextView)view.findViewById(R.id.book_now);
-        book_now_button=(Button)view.findViewById(R.id.book_now_button);
-        package_name=(TextView)view.findViewById(R.id.package_name);
-        package_price=(TextView)view.findViewById(R.id.place_price);
-        package_name.setText(DetailMain.place_name);
-        package_price.setText(DetailMain.place_price);
-        direction=(TextView)view.findViewById(R.id.direction_sign);
-        direction.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Location.java","Intent to Full Direction");
-                startActivity(new Intent(getContext(), Full_Direction.class));
-            }
-        });
-        book_now.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("Ok Click","Success Intent to login");
-                startActivity(new Intent(getContext(), SignIn.class));
-            }
-        });
-        book_now_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), SignIn.class));
-            }
-        });
-        pkMapHelper = new PkMapHelper(getContext(),getActivity(),mapView);
-        // Add a MapboxMap
-
+        pkMapHelper = new PkMapHelper(this,this,mapView);
     }
-
     @SuppressWarnings("MissingPermission")
     @Override
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
@@ -120,7 +51,7 @@ public class Location extends Fragment {
 
                         if(PermissionsManager.areRuntimePermissionsRequired())
                         {
-                            if(PermissionsManager.areLocationPermissionsGranted(getContext()))
+                            if(PermissionsManager.areLocationPermissionsGranted(Full_Direction.this))
                             {
                                 locationComponent = pkMapHelper.setUpLocatinComponentDetail(style,locationComponent,false);
 
@@ -162,13 +93,13 @@ public class Location extends Fragment {
                                         }
                                         else
                                         {
-                                            Toast.makeText(getContext(),"Permission Cancel",Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Full_Direction.this,"Permission Cancel",Toast.LENGTH_SHORT).show();
 
 
                                         }
                                     }
                                 });
-                                permissionsManager.requestLocationPermissions(getActivity());
+                                permissionsManager.requestLocationPermissions(Full_Direction.this);
 
 
 
@@ -183,26 +114,20 @@ public class Location extends Fragment {
 
 
     }
-
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        mapView.onDestroy();
-    }
-    @Override
-    public void onPause() {
+    protected void onPause() {
         super.onPause();
         mapView.onPause();
     }
 
     @Override
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         mapView.onResume();
     }
 
     @Override
-    public void onStop() {
+    protected void onStop() {
         super.onStop();
         mapView.onStop();
 
@@ -213,5 +138,4 @@ public class Location extends Fragment {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         permissionsManager.onRequestPermissionsResult(requestCode,permissions,grantResults);
     }
-
 }
